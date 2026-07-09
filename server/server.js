@@ -15,7 +15,8 @@ const allowedOrigins = ['http://localhost:5173', 'https://authentication-system-
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin:allowedOrigins, credentials: true}));
+app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.options('*', cors({ origin: allowedOrigins, credentials: true }));
 
 // API Endpoints
 app.get('/', (req, res) => {
